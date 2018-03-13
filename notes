@@ -1,3 +1,8 @@
 mongod from bin
 mongo from tippet
 nodemon from tippet
+
+
+angular
+ng g component NAME (from components folder) //creates new component
+ng serve // starts the app

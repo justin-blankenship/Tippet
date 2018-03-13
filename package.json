@@ -18,6 +18,5 @@
     "passport-jwt": "*"
   },
   "author": "Justin Blankenship",
-  "license": "ISC",
-  "devDependencies": {}
+  "license": "ISC"
 }
