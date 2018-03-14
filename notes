@@ -6,3 +6,7 @@ nodemon from tippet
 angular
 ng g component NAME (from components folder) //creates new component
 ng serve // starts the app
+
+
+heroku stuff
+https://infinite-ridge-22009.herokuapp.com/ | https://git.heroku.com/infinite-ridge-22009.git
