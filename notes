@@ -13,3 +13,21 @@ https://vast-brook-94853.herokuapp.com/ | https://git.heroku.com/vast-brook-9485
 
 app deployed on heroku
 database hosted on mLab
+
+
+HEROKU COMMANDS
+git status					//see changed files
+git add .					//stage files
+git commit -m "comments"	//commit files
+git push heroku master		//push files
+heroku open 				//open app url
+heroku local				//open app locally
+heroku ps					//view dyno hours
+heroku ps:scale web=0		//kill dyno
+heroku ps:scale web=1		//restart dyno
+heroku logs --tail			//view logs
+
+
+
+MAKING CHANGES
+mongod, mongo, nodemon, then use port 8080
