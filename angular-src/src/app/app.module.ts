@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
-
+import { AuthGuard } from './guards/auth.guard';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -20,8 +20,8 @@ const appRoutes: Routes = [
   { path:'', component: HomeComponent },
   { path:'register', component: RegisterComponent },
   { path:'login', component: LoginComponent },
-  { path:'dashboard', component: DashboardComponent },
-  { path:'profile', component: ProfileComponent }
+  { path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard] }, //protected route
+  { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] }      //protected route
 ]
 
 @NgModule({
@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ValidateService, AuthService, HttpClientModule],
+  providers: [ValidateService, AuthService, HttpClientModule, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
