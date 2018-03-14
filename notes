@@ -30,4 +30,4 @@ heroku logs --tail			//view logs
 
 
 MAKING CHANGES
-mongod, mongo, nodemon, then use port 8080
+use mongod, mongo, nodemon, then use port 8080
