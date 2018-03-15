@@ -1,12 +1,5 @@
-mongod from bin
-mongo from tippet
-nodemon from tippet
-
-
 angular
 ng g component NAME (from components folder) //creates new component
-ng serve // starts the app
-
 
 heroku stuff
 https://vast-brook-94853.herokuapp.com/ | https://git.heroku.com/vast-brook-94853.git
@@ -30,4 +23,9 @@ heroku logs --tail			//view logs
 
 
 MAKING CHANGES
-use mongod, mongo, nodemon, then use port 8080
+mongod (bin)
+mongo (root)
+nodemon (root)
+ng serve(angular-src)
+ng build (after changes)
+pus it to heroku 
