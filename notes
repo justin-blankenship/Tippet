@@ -28,4 +28,4 @@ mongo (root)
 nodemon (root)
 ng serve(angular-src)
 ng build (after changes)
-pus it to heroku 
+push it to heroku 
