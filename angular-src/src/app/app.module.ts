@@ -16,6 +16,8 @@ import { AuthService } from './services/auth.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopsComponent } from './components/shops/shops.component';
+import { AgmCoreModule } from '@agm/core';
+
 
 const appRoutes: Routes = [
   { path:'', component: HomeComponent },
@@ -43,7 +45,10 @@ const appRoutes: Routes = [
     FlashMessagesModule.forRoot(),
     HttpClientModule, 
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA0NXbFJAdU2ZXdu3wTATEORvjUbgFO9OU'
+    })
   ],
   providers: [ValidateService, AuthService, HttpClientModule, AuthGuard],
   bootstrap: [AppComponent]
