@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/nav.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA,CAAC","file":"scripts.bundle.js","sourcesContent":["//Force navbar to close when a route is selected\r\n$(document).on('click','.navbar-collapse.show',function(e) {\r\n\t$(this).collapse('hide');\r\n});\r\n\r\n\n\n\n// WEBPACK FOOTER //\n// src/nav.js"],"sourceRoot":"webpack:///"}
