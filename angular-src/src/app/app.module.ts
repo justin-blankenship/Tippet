@@ -15,13 +15,15 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthService } from './services/auth.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { ShopsComponent } from './components/shops/shops.component';
 
 const appRoutes: Routes = [
   { path:'', component: HomeComponent },
   { path:'register', component: RegisterComponent },
   { path:'login', component: LoginComponent },
   { path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard] }, //protected route
-  { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] }      //protected route
+  { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] },      //protected route
+  { path:'shops', component: ShopsComponent }
 ]
 
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    ShopsComponent
   ],
   imports: [
     BrowserModule,

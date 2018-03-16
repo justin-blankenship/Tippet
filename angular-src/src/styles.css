@@ -123,3 +123,9 @@ tr:nth-child(even) {
     height: 500px;
     width: 100%;
 }
+
+#appLoad {
+    background-color: #FFDE15;
+    color: black;
+    text-align: center;
+}
