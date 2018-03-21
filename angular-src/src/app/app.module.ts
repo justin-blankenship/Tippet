@@ -17,6 +17,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopsComponent } from './components/shops/shops.component';
 import { AgmCoreModule } from '@agm/core';
+import { FliesComponent } from './components/flies/flies.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard] }, //protected route
   { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] },      //protected route
-  { path:'shops', component: ShopsComponent }
+  { path:'shops', component: ShopsComponent },
+  { path:'flies', component: FliesComponent }
 ]
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     HomeComponent,
     DashboardComponent,
     ProfileComponent,
-    ShopsComponent
+    ShopsComponent,
+    FliesComponent
   ],
   imports: [
     BrowserModule,

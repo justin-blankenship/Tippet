@@ -36,24 +36,28 @@ export class RegisterComponent implements OnInit {
   	}
 
   	//Required Fields
-  	if(!this.validateService.validateRegister(user)) {
-  		this.flashMessage.show('Please fill in all fields.', {cssClass: 'alert-danger', timeout: 5000});
+  	if (!this.validateService.validateRegister(user)) {
+  		this.flashMessage.show('Please fill in all fields.', 
+        {cssClass: 'alert-danger', timeout: 4000});
   		return false;
   	}
 
   	//Validate Email
-  	if(!this.validateService.validateEmail(user.email)) {
-  		this.flashMessage.show('Please use a valid email address.', {cssClass: 'alert-danger', timeout: 5000});
+  	if (!this.validateService.validateEmail(user.email)) {
+  		this.flashMessage.show('Please use a valid email address.', 
+        {cssClass: 'alert-danger', timeout: 4000});
   		return false;
   	}
 
     //Register User
     this.authService.registerUser(user).subscribe(data => {
-      if(data.success) {
-        this.flashMessage.show('You are now registered.  Please log in.', {cssClass: 'alert-success', timeout: 5000});
+      if (data.success) {
+        this.flashMessage.show('You are now registered.  Please log in.', 
+          {cssClass: 'alert-success', timeout: 4000});
         this.router.navigate(['/login']);
       } else {
-        this.flashMessage.show('Something went wrong.  Please try again.', {cssClass: 'alert-danger', timeout: 5000});
+        this.flashMessage.show('Something went wrong.  Please try again.', 
+          {cssClass: 'alert-danger', timeout: 4000});
         this.router.navigate(['/register']);
       }
     });
