@@ -29,4 +29,5 @@ export class ShopsComponent implements OnInit {
   		});
   	}
   }
+  
 }
