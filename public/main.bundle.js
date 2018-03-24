@@ -117,7 +117,7 @@ var appRoutes = [
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_10__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_9__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_12__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'shops', component: __WEBPACK_IMPORTED_MODULE_16__components_shops_shops_component__["a" /* ShopsComponent */] },
+    { path: 'shops', component: __WEBPACK_IMPORTED_MODULE_16__components_shops_shops_component__["a" /* ShopsComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'flies', component: __WEBPACK_IMPORTED_MODULE_18__components_flies_flies_component__["a" /* FliesComponent */] }
 ];
 var AppModule = /** @class */ (function () {
@@ -584,7 +584,7 @@ module.exports = "agm-map {\r\n\theight: 450px;\r\n}\r\n\r\n"
 /***/ "./src/app/components/shops/shops.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n  <h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n  <agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n\n<div *ngIf=\"user\" class=\"mt-20 col text-center mx-auto\">\n\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\n\t<h3>Use this map to find fly shops near you.</h3>\t\n</div>\n<div *ngIf=\"lat && lng\" class=\"mt-3\">\n\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t<agm-marker [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t<agm-info-window>\n\t\t\t\t<h5>You Are Here</h5>\n\t\t\t</agm-info-window>\n\t\t</agm-marker>\n\t</agm-map>\n<div>"
+module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n<h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n<agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n<div *ngIf=\"user\" class=\"container\">\n\n\t<div class=\"mt-20 col text-center mx-auto\">\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\n\t\t<h3>Use this map to find fly shops near you.</h3>\t\n\t</div>\n\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\n\t\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t<agm-marker [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t\t<agm-info-window>\n\t\t\t\t\t<h5>You Are Here</h5>\n\t\t\t\t</agm-info-window>\n\t\t\t</agm-marker>\n\t\t</agm-map>\n\t</div>\n\n</div>"
 
 /***/ }),
 
@@ -594,6 +594,8 @@ module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n  <h2 class
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -604,15 +606,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ShopsComponent = /** @class */ (function () {
-    // selectedLocation(event) {
-    // 	this.lat = event.coords.lat;
-    // 	this.lng = event.coords.lng;
-    // 	this.pinPlaced = 1;
-    // }
-    function ShopsComponent() {
+    function ShopsComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
     }
     ShopsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getProfile().subscribe(function (profile) {
+            _this.user = profile.user;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
         this.getUserLocation();
     };
     ShopsComponent.prototype.getUserLocation = function () {
@@ -630,11 +638,40 @@ var ShopsComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/shops/shops.component.html"),
             styles: [__webpack_require__("./src/app/components/shops/shops.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], ShopsComponent);
     return ShopsComponent;
 }());
 
+// import { Component, OnInit } from '@angular/core';
+// @Component({
+//   selector: 'app-shops',
+//   templateUrl: './shops.component.html',
+//   styleUrls: ['./shops.component.css']
+// })
+// export class ShopsComponent implements OnInit {
+// 	lat: number;
+// 	lng: number;
+//   constructor() { }
+//   ngOnInit() {
+//   	this.getUserLocation()
+//   }
+//   private getUserLocation() {
+//   	if (navigator.geolocation) {
+//   		navigator.geolocation.getCurrentPosition(position => {
+//   			this.lat = position.coords.latitude;
+//   			this.lng = position.coords.longitude;
+//   		});
+//   	}
+//   }
+// }
+///////////////////////////////////////////////////////////////////
+// selectedLocation(event) {
+//   this.lat = event.coords.lat;
+//   this.lng = event.coords.lng;
+//   this.pinPlaced = 1;
+// } 
 
 
 /***/ }),

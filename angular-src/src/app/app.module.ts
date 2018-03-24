@@ -24,7 +24,7 @@ const appRoutes: Routes = [
   { path:'register', component: RegisterComponent },
   { path:'login', component: LoginComponent },
   { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] },  //protected route
-  { path:'shops', component: ShopsComponent },
+  { path:'shops', component: ShopsComponent, canActivate:[AuthGuard] },      //protected route
   { path:'flies', component: FliesComponent }
 ]
 
