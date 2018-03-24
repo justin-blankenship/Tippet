@@ -584,7 +584,7 @@ module.exports = "agm-map {\r\n\theight: 450px;\r\n}\r\n\r\n"
 /***/ "./src/app/components/shops/shops.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n  <h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n  <agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n<div *ngIf=\"lat && lng\">\n\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t<agm-marker [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t<agm-info-window>\n\t\t\t\t<h5>You Are Here</h5>\n\t\t\t</agm-info-window>\n\t\t</agm-marker>\n\t</agm-map>\n<div>"
+module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n  <h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n  <agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n\n<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\n\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\n\t<h3>Use this map to find fly shops near you.</h3>\t\n</div>\n<div *ngIf=\"lat && lng\" class=\"mt-3\">\n\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t<agm-marker [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t<agm-info-window>\n\t\t\t\t<h5>You Are Here</h5>\n\t\t\t</agm-info-window>\n\t\t</agm-marker>\n\t</agm-map>\n<div>"
 
 /***/ }),
 
