@@ -167,7 +167,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div>\r\n\t<h2 class=\"page-header\">{{fly.title}}</h2>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->"
+module.exports = "<br>\r\n<br>\r\n<div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
