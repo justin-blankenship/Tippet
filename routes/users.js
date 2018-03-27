@@ -4,7 +4,6 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
-const Fly = require('../models/fly');
 
 //Register
 router.post('/register', (req, res, next) => {
@@ -61,11 +60,6 @@ router.post('/authenticate', (req, res, next) => {
 //Profile
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
 	res.json({user:req.user});
-});
-
-//Flies
-router.get('/flies', (req, res, next) => {
-	res.json({fly:req.fly});
 });
 
 module.exports = router;

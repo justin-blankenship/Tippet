@@ -23,6 +23,7 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 
 const users = require('./routes/users');
+const flies = require('./routes/flies');
 
 //Port Number
 const port = process.env.PORT || 8080;
@@ -30,7 +31,7 @@ const port = process.env.PORT || 8080;
 //CORS Middleware - allows access to any domain unless authentication disables routes
 app.use(cors());  
 
-//Set Static Folder
+//Set the static directory for forntend framework
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Body Parser Middleware
@@ -44,6 +45,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
+app.use('/flies', flies);
 
 //Index Route
 app.get('/', (req, res) => {

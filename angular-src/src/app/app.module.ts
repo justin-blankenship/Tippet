@@ -20,12 +20,32 @@ import { FliesComponent } from './components/flies/flies.component';
 
 
 const appRoutes: Routes = [
-  { path:'', component: HomeComponent },
-  { path:'register', component: RegisterComponent },
-  { path:'login', component: LoginComponent },
-  { path:'profile', component: ProfileComponent, canActivate:[AuthGuard] },  //protected route
-  { path:'shops', component: ShopsComponent, canActivate:[AuthGuard] },      //protected route
-  { path:'flies', component: FliesComponent }
+  {
+    path:'', 
+    component: HomeComponent
+  },
+  {
+    path:'register',
+    component: RegisterComponent
+  },
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  { //protected route
+    path:'profile',
+    component: ProfileComponent,
+    canActivate:[AuthGuard]
+  },
+  {//protected route
+    path:'shops',
+    component: ShopsComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'flies',
+    component: FliesComponent
+  }
 ]
 
 @NgModule({

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-flies',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flies.component.css']
 })
 export class FliesComponent implements OnInit {
+	flies: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+  	this.http.get('/flies').subscribe(data => {
+  		this.flies = data;
+  	});
   }
-
 }
