@@ -187,7 +187,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\r\n<br>\r\n<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>"
+module.exports = "<br>\r\n<br>\r\n<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>\r\n\r\n<div class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{fly.type}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
@@ -515,7 +515,7 @@ module.exports = ""
 /***/ "./src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-3 col text-center mx-auto\">\n  <h2 class=\"page-header\"> User Registration</h2>\n</div>\n\n<form (submit)=\"onRegisterSubmit()\">\n\t<div class=\"form-group\">\n\t\t<label for=\"inputName\">Name</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"inputName\" [(ngModel)]=\"name\" name=\"name\" placeholder=\"Type Your Name\"> \n\t</div>\n\n\t<div class=\"form-group\">\n    \t<label for=\"inputUsername\">Username</label>\n    \t<input type=\"text\" class=\"form-control\" id=\"inputUsername\" [(ngModel)]=\"username\" name=\"username\" placeholder=\" Type Your Username\">\n  \t</div>\n\n\t<div class=\"form-group\">\n  \t\t<label for=\"inputEmail\">Email address</label>\n  \t\t<input type=\"text\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\" [(ngModel)]=\"email\" name=\"email\" placeholder=\"Type Your Email\">\n    \t<small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  \t</div>\n\n  \t<div class=\"form-group\">\n    \t<label for=\"inputPassword\">Password</label>\n    \t<input type=\"text\" class=\"form-control\" id=\"inputPassword\" [(ngModel)]=\"password\" name=\"password\" placeholder=\" Type Your Password\">\n  \t</div>\n\n  \t<button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n\n</form>\n"
+module.exports = "<div class=\"mt-3 col text-center mx-auto\">\n  <h2 class=\"page-header\"> User Registration</h2>\n</div>\n\n<form (submit)=\"onRegisterSubmit()\">\n\t<div class=\"form-group\">\n\t\t<label for=\"inputName\">Name</label>\n\t\t<input type=\"text\" class=\"form-control\" id=\"inputName\" [(ngModel)]=\"name\" name=\"name\" placeholder=\"Type Your Name\"> \n\t</div>\n\n\t<div class=\"form-group\">\n    \t<label for=\"inputUsername\">Username</label>\n    \t<input type=\"text\" class=\"form-control\" id=\"inputUsername\" [(ngModel)]=\"username\" name=\"username\" placeholder=\" Type Your Username\">\n  \t</div>\n\n\t<div class=\"form-group\">\n  \t\t<label for=\"inputEmail\">Email address</label>\n  \t\t<input type=\"text\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\" [(ngModel)]=\"email\" name=\"email\" placeholder=\"Type Your Email\">\n    \t<small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  \t</div>\n\n  \t<div class=\"form-group\">\n    \t<label for=\"inputPassword\">Password</label>\n    \t<input type=\"password\" class=\"form-control\" id=\"inputPassword\" [(ngModel)]=\"password\" name=\"password\" placeholder=\" Type Your Password\">\n  \t</div>\n\n  \t<button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n\n</form>\n"
 
 /***/ }),
 
@@ -850,7 +850,7 @@ var ValidateService = /** @class */ (function () {
         return regExp.test(String(email).toLowerCase());
     };
     ValidateService.prototype.validateRegister = function (user) {
-        if (user.name == undefined || user.email == undefined || user.password == undefined) {
+        if (user.name == undefined || user.password == undefined || user.email == undefined) {
             return false;
         }
         else {
