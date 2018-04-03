@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopsComponent } from './components/shops/shops.component';
 import { AgmCoreModule } from '@agm/core';
 import { FliesComponent } from './components/flies/flies.component';
+import { PatternService } from './services/pattern.service';
 
 
 const appRoutes: Routes = [
@@ -70,7 +71,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyA0NXbFJAdU2ZXdu3wTATEORvjUbgFO9OU'
     })
   ],
-  providers: [HttpClientModule, ValidateService, AuthService, AuthGuard],
+  providers: [HttpClientModule, ValidateService, AuthService, AuthGuard, PatternService],
   bootstrap: [AppComponent]
 })
 
