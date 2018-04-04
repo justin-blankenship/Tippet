@@ -13,6 +13,19 @@ export class ShopsComponent implements OnInit {
   lat: number;
   lng: number;
 
+  pins: pin[] = [
+    {
+      name:'Shop 1',
+      lat: 35.627936,
+      lng: -82.543290
+    },
+    {
+      name:'Shop 2',
+      lat: 35.586626,
+      lng: -82.548631
+    }
+  ];
+
   constructor(
     private authService: AuthService, 
     private router: Router
@@ -37,6 +50,12 @@ export class ShopsComponent implements OnInit {
        });
      }
    }
+}
+
+interface pin {
+  name: string;
+  lat: number;
+  lng: number;
 }
 
 // import { Component, OnInit } from '@angular/core';

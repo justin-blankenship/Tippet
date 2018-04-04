@@ -5,7 +5,7 @@
 		<li class="list-group-item">Title: {{fly.title}}</li>
 		<li class="list-group-item">Type: {{fly.type}}</li>
 	</ul>
-</div>
+</div> -->
 
 <div class="container">
 	<h1>Fly List</h1>
@@ -18,19 +18,10 @@
 		</thead>
 		<tbody>
 			<tr *ngFor="let fly of flies">
-				<td>{{ fly }}</td>
-				<br>
+				<td>{{ fly.title }}</td>
 				<td>{{ fly.type }}</td>
-				<br>
 				<td>Show Detail</td>
 			</tr>
 		</tbody>
 	</table>
-</div> -->
-
-
-<h1>The FLY database is working</h1>
-
-<ul>
-	<li *ngFor="let fly of flies">{{fly.title}}</li>
-</ul>
+</div>
