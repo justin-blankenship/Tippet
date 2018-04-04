@@ -611,7 +611,7 @@ module.exports = "agm-map {\r\n\theight: 450px;\r\n}\r\n\r\n"
 /***/ "./src/app/components/shops/shops.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n<h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n<agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n<div *ngIf=\"user\" class=\"container\">\n\n\t<div class=\"mt-20 col text-center mx-auto\">\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\n\t\t<h3>Use this map to find fly shops near you.</h3>\t\n\t</div>\n\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\n\t\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t\n\t\t\t<agm-marker \n\t\t\t[latitude]=\"lat\" \n\t\t\t[longitude]=\"lng\">\n\t\t\t\t\n\t\t\t\t<agm-info-window>\n\t\t\t\t\t<h5>You Are Here</h5>\n\t\t\t\t</agm-info-window>\n\n\t\t\t</agm-marker>\n\n\t\t\t<agm-marker \n\t\t\t*ngFor=\"let p of pins\"\n\t\t\t[latitude]=\"p.lat\" \n\t\t\t[longitude]=\"p.lng\">\n\t\t\t\t\n\t\t\t\t<agm-info-window>\n\t\t\t\t\t<h5>Shop Marker</h5>\n\t\t\t\t</agm-info-window>\n\t\t\t\t\n\t\t\t</agm-marker>\n\n\t\t</agm-map>\n\t</div>\n\n</div>"
+module.exports = "<!-- <div class=\"mt-3 col text-center mx-auto\">\n<h2 class=\"page-header\">Fly Shops Near You</h2>\n</div>\n<agm-map [latitude]=\"lat\" [longitude]=\"lng\" (mapClick)=\"selectedLocation($event)\">\n<agm-marker *ngIf=\"pinPlaced\" [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\n</agm-map> -->\n\n<!-- img-fluid -->\n<div *ngIf=\"user\" class=\"container\">\n\n\t<div class=\"mt-20 col text-center mx-auto\">\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\n\t\t<h3>Use this map to find fly shops near you.</h3>\t\n\t</div>\n\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\n\t\t<agm-map [latitude]=\"lat\" [longitude]=\"lng\">\n\t\t\t\n\t\t\t<agm-marker \n\t\t\t[latitude]=\"lat\" \n\t\t\t[longitude]=\"lng\">\n\t\t\t\t\n\t\t\t\t<agm-info-window>\n\t\t\t\t\t<strong>You Are Here</strong>\n\t\t\t\t</agm-info-window>\n\n\t\t\t</agm-marker>\n\n\t\t\t<agm-marker \n\t\t\t*ngFor=\"let p of pins\"\n\t\t\t[latitude]=\"p.lat\" \n\t\t\t[longitude]=\"p.lng\">\n\t\t\t\t\n\t\t\t\t<agm-info-window>\n\t\t\t\t\t<strong>{{p.name}}</strong>\n\t\t\t\t\t<p>{{p.address}}</p>\n\t\t\t\t\t<p>{{p.street}}</p>\n\t\t\t\t\t<p>{{p.czs}}</p>\n\t\t\t\t</agm-info-window>\n\t\t\t\t\n\t\t\t</agm-marker>\n\n\t\t</agm-map>\n\t</div>\n\n</div>"
 
 /***/ }),
 
@@ -641,14 +641,18 @@ var ShopsComponent = /** @class */ (function () {
         this.router = router;
         this.pins = [
             {
-                name: 'Shop 1',
-                lat: 35.627936,
-                lng: -82.543290
+                name: 'Curtis Wright Outfitters & Fly Fishing Guides',
+                lat: 35.566113,
+                lng: -82.540867,
+                street: '5 All Souls Crescent',
+                czs: 'Asheville, NC 28803'
             },
             {
-                name: 'Shop 2',
-                lat: 35.586626,
-                lng: -82.548631
+                name: 'Hunter Banks Fly Fishing Co.',
+                lat: 35.597075,
+                lng: -82.559710,
+                street: '29 Montford Ave',
+                czs: 'Asheville, NC 28801'
             }
         ];
     }

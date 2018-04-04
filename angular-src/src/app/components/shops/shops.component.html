@@ -21,7 +21,7 @@
 			[longitude]="lng">
 				
 				<agm-info-window>
-					<h5>You Are Here</h5>
+					<strong>You Are Here</strong>
 				</agm-info-window>
 
 			</agm-marker>
@@ -32,7 +32,10 @@
 			[longitude]="p.lng">
 				
 				<agm-info-window>
-					<h5>Shop Marker</h5>
+					<strong>{{p.name}}</strong>
+					<p>{{p.address}}</p>
+					<p>{{p.street}}</p>
+					<p>{{p.czs}}</p>
 				</agm-info-window>
 				
 			</agm-marker>

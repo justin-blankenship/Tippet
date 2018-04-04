@@ -15,14 +15,18 @@ export class ShopsComponent implements OnInit {
 
   pins: pin[] = [
     {
-      name:'Shop 1',
-      lat: 35.627936,
-      lng: -82.543290
+      name:'Curtis Wright Outfitters & Fly Fishing Guides',
+      lat: 35.566113,
+      lng: -82.540867,
+      street:'5 All Souls Crescent',
+      czs:'Asheville, NC 28803'
     },
     {
-      name:'Shop 2',
-      lat: 35.586626,
-      lng: -82.548631
+      name:'Hunter Banks Fly Fishing Co.',
+      lat: 35.597075,
+      lng: -82.559710,
+      street:'29 Montford Ave',
+      czs:'Asheville, NC 28801'
     }
   ];
 
@@ -56,6 +60,8 @@ interface pin {
   name: string;
   lat: number;
   lng: number;
+  street: string;
+  czs: string;
 }
 
 // import { Component, OnInit } from '@angular/core';
