@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flies',
@@ -10,7 +9,7 @@ import { Router } from '@angular/router';
 export class FliesComponent implements OnInit {
 	flies: any;
 
-  constructor(private router:Router, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   	this.http.get('/flies').subscribe(data => {

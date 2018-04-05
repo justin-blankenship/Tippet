@@ -198,7 +198,6 @@ module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"l
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FliesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -210,10 +209,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
 var FliesComponent = /** @class */ (function () {
-    function FliesComponent(router, http) {
-        this.router = router;
+    function FliesComponent(http) {
         this.http = http;
     }
     FliesComponent.prototype.ngOnInit = function () {
@@ -228,7 +225,7 @@ var FliesComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/flies/flies.component.html"),
             styles: [__webpack_require__("./src/app/components/flies/flies.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], FliesComponent);
     return FliesComponent;
 }());
@@ -383,7 +380,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"\"><img src=\"assets/logo.png\" height=\"40\"></a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active-link\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"\">Home</a>\n      </li>\n      <li class=\"nav-item active\">\n        <a *ngIf=\"!authService.loggedIn()\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"profile\">Profile</a>\n      </li>\n      <li *ngIf=\"!authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"register\">Register</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"shops\">Outfitters</a>\n      </li>\n    </ul>\n    <form class=\"form-inline mt-2 mt-md-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search...\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n\n<!-- data-toggle=\"collapse\" data-target=\"navbar-collapse.in\" -->"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"\"><img src=\"assets/logo.png\" height=\"40\"></a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active-link\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"\">Home</a>\n      </li>\n      <li class=\"nav-item active\">\n        <a *ngIf=\"!authService.loggedIn()\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"profile\">Profile</a>\n      </li>\n      <li *ngIf=\"!authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"register\">Register</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"shops\">Outfitters</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"flies\">Flies\n    </ul>\n    <form class=\"form-inline mt-2 mt-md-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search...\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-info my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n\n<!-- data-toggle=\"collapse\" data-target=\"navbar-collapse.in\" -->"
 
 /***/ }),
 
