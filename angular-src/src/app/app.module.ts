@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShopsComponent } from './components/shops/shops.component';
 import { AgmCoreModule } from '@agm/core';
 import { FliesComponent } from './components/flies/flies.component';
+import { KnotsComponent } from './components/knots/knots.component';
 
 
 const appRoutes: Routes = [
@@ -45,6 +46,10 @@ const appRoutes: Routes = [
   {
     path:'flies',
     component: FliesComponent
+  },
+  {
+    path:'knots',
+    component: KnotsComponent
   }
 ]
 
@@ -57,7 +62,8 @@ const appRoutes: Routes = [
     LoginComponent,        
     ProfileComponent,
     ShopsComponent,
-    FliesComponent
+    FliesComponent,
+    KnotsComponent
   ],
   imports: [
     BrowserModule,
