@@ -216,7 +216,7 @@ var FliesComponent = /** @class */ (function () {
     FliesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.http.get('/flies').subscribe(function (data) {
-            _this.flies = data;
+            _this.fly = data;
         });
     };
     FliesComponent = __decorate([

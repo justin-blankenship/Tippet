@@ -7,13 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./flies.component.css']
 })
 export class FliesComponent implements OnInit {
-	flies: any;
+	fly: Object;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
   	this.http.get('/flies').subscribe(data => {
-  		this.flies = data;
+  		this.fly = data;
   	});
   }
+
 }
