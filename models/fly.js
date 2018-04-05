@@ -7,7 +7,7 @@ const FlySchema = mongoose.Schema({
 		type: String,
 		required:true
 	},
-	type: {
+	flyType: {
 		type: String,
 		required:true
 	}
