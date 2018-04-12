@@ -47,9 +47,10 @@ const appRoutes: Routes = [
     path:'flies',
     component: FliesComponent
   },
-  {
+  { //protected route
     path:'knots',
-    component: KnotsComponent
+    component: KnotsComponent,
+    canActivate:[AuthGuard]
   }
 ]
 
