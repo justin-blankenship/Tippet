@@ -70,6 +70,19 @@ body {
     overflow: hidden;
 }
 
+.quote {
+    margin-left: 1.3em;
+    margin-right: 1.3em;
+    text-align: justify-all;
+    color: rgb(255,255,255);
+}
+
+.author {
+    margin-left: 2em;
+    margin-right: 5em;
+    text-align: right;
+}
+
 #map {
     height: 500px;
     width: 100%;
@@ -169,19 +182,6 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.quote {
-    margin-left: 1.3em;
-    margin-right: 1.3em;
-    text-align: justify-all;
-    color: rgb(255,255,255);
-}
-
-.author {
-    margin-left: 2em;
-    margin-right: 5em;
-    text-align: right;
-}
-
 .knotTable td {
     cursor: pointer;
 }
@@ -190,4 +190,14 @@ tr:nth-child(even) {
     margin-top: 12px;
 }
 
+a:link {
+    text-decoration: none;
+}
 
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}

@@ -19,6 +19,7 @@ import { AgmCoreModule } from '@agm/core';
 import { FliesComponent } from './components/flies/flies.component';
 import { KnotsComponent } from './components/knots/knots.component';
 import { AboutComponent } from './components/about/about.component';
+import { HandlingComponent } from './components/handling/handling.component';
 
 
 const appRoutes: Routes = [
@@ -55,6 +56,10 @@ const appRoutes: Routes = [
   { 
     path:'about',
     component: AboutComponent
+  },
+  { 
+    path:'handling',
+    component: HandlingComponent
   }
 ]
 
@@ -69,7 +74,8 @@ const appRoutes: Routes = [
     ShopsComponent,
     FliesComponent,
     KnotsComponent,
-    AboutComponent
+    AboutComponent,
+    HandlingComponent
   ],
   imports: [
     BrowserModule,
