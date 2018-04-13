@@ -272,7 +272,7 @@ module.exports = ""
 /***/ "./src/app/components/casting/casting.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-3 col text-center mx-auto\">\n\t<h2 class=\"page-header\">Basic Casting Techniques</h2>\n</div>\n<div class=\"row justify-content-center\">\n\t<div>\n\t<a href=\"https://www.fix.com/blog/basic-fly-casting-techniques/\"><img src=\"https://www.fix.com/assets/content/15486/fly-casting-embed-large.png\" border=\"0\" /></a> \n\t</div>\n</div>"
+module.exports = "<div class=\"mt-3 col text-center mx-auto\">\n\t<h2 class=\"page-header\">Basic Casting Techniques</h2>\n</div>\n<div class=\"row justify-content-center\">\n\n\t<a href=\"https://www.fix.com/blog/basic-fly-casting-techniques/\"><img src=\"https://www.fix.com/assets/content/15486/fly-casting-embed-large.png\" border=\"0\" /></a> \n\n</div>\n<br>\n<br>\n<br>\n<br>\n<div class=\"mt-3 col text-center mx-auto\">\n\t<h2 class=\"page-header\">Advanced Casting Techniques</h2>\n</div>\n<div class=\"row justify-content-center\">\n\n\t <a href=\"https://www.fix.com/blog/expert-fly-casting/\"><img src=\"https://www.fix.com/assets/content/19952/advanced-fly-casting-embed-large.png\" border=\"0\" /></a>  \n\t\n</div>"
 
 /***/ }),
 
