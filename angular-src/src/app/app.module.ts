@@ -20,6 +20,8 @@ import { FliesComponent } from './components/flies/flies.component';
 import { KnotsComponent } from './components/knots/knots.component';
 import { AboutComponent } from './components/about/about.component';
 import { HandlingComponent } from './components/handling/handling.component';
+import { CastingComponent } from './components/casting/casting.component';
+import { TyingComponent } from './components/tying/tying.component';
 
 
 const appRoutes: Routes = [
@@ -60,6 +62,14 @@ const appRoutes: Routes = [
   { 
     path:'handling',
     component: HandlingComponent
+  },
+  { 
+    path:'casting',
+    component: CastingComponent
+  },
+  { 
+    path:'tying',
+    component: TyingComponent
   }
 ]
 
@@ -75,7 +85,9 @@ const appRoutes: Routes = [
     FliesComponent,
     KnotsComponent,
     AboutComponent,
-    HandlingComponent
+    HandlingComponent,
+    CastingComponent,
+    TyingComponent
   ],
   imports: [
     BrowserModule,
