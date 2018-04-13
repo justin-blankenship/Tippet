@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     component: ProfileComponent,
     canActivate:[AuthGuard]
   },
-  {//protected route
+  { //protected route
     path:'shops',
     component: ShopsComponent,
     canActivate:[AuthGuard]
@@ -50,7 +50,7 @@ const appRoutes: Routes = [
   { //protected route
     path:'knots',
     component: KnotsComponent,
-    canActivate:[AuthGuard]
+    canActivate: [AuthGuard]
   }
 ]
 

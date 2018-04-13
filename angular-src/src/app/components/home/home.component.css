@@ -32,9 +32,24 @@ body {
 
 /* Since positioning the image, we need to help out the caption */
 
-.carousel-caption {
-    bottom: 3rem;
+/*#highCaption {
+    top: 2rem;
     z-index: 10;
+}
+
+#lowCaption {
+    bottom: 2rem;
+    z-index: 10;
+}*/
+
+.carousel-caption {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.5);
 }
 
 
@@ -155,10 +170,15 @@ tr:nth-child(even) {
 }
 
 .quote {
+    margin-left: 1.3em;
+    margin-right: 1.3em;
     text-align: justify-all;
+    color: rgb(255,255,255);
 }
 
 .author {
+    margin-left: 2em;
+    margin-right: 5em;
     text-align: right;
 }
 
