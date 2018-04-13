@@ -18,6 +18,7 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { AgmCoreModule } from '@agm/core';
 import { FliesComponent } from './components/flies/flies.component';
 import { KnotsComponent } from './components/knots/knots.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 const appRoutes: Routes = [
@@ -47,10 +48,13 @@ const appRoutes: Routes = [
     path:'flies',
     component: FliesComponent
   },
-  { //protected route
+  { 
     path:'knots',
-    component: KnotsComponent,
-    canActivate: [AuthGuard]
+    component: KnotsComponent
+  },
+  { 
+    path:'about',
+    component: AboutComponent
   }
 ]
 
@@ -64,7 +68,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     ShopsComponent,
     FliesComponent,
-    KnotsComponent
+    KnotsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
