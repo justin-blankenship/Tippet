@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./flies.component.css']
 })
 export class FliesComponent implements OnInit {
-	flies: Object;
+	flies: any;
 
   constructor(private http: HttpClient) { }
 

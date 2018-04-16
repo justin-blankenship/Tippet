@@ -3,16 +3,26 @@ import * as $ from 'jquery';
 
 
 @Component({
-  selector: 'app-knots',
-  templateUrl: './knots.component.html',
-  styleUrls: ['./knots.component.css']
+	selector: 'app-knots',
+	templateUrl: './knots.component.html',
+	styleUrls: ['./knots.component.css']
 })
 export class KnotsComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		var urlParams = [];
+		window.location.search.replace("?", "").split("&").forEach(function (e, i) {
+			var p = e.split("=");
+			urlParams[p[0]] = p[1];
+		});
+		if(urlParams["loaded"]) {}else{
+
+			let win = (window as any);
+			win.location.search = '?loaded=1';
+		}
+	}
 
 }
 
