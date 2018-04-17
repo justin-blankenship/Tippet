@@ -716,7 +716,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"mt-20 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Name: {{user.name}}</li>\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>"
+module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
@@ -876,7 +876,7 @@ module.exports = "agm-map {\r\n\theight: 450px;\r\n}\r\n\r\n"
 /***/ "./src/app/components/shops/shops.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container\">\r\n\r\n\t<div class=\"mt-20 col text-center mx-auto\">\r\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\r\n\t\t<h3>Use this map to find fly shops near you.</h3>\t\r\n\t</div>\r\n\r\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\r\n\t\t<agm-map \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\"\r\n\t\t\t[zoom]=\"10\">\r\n\t\t\t\r\n\t\t\t<agm-marker \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>You Are Here</strong>\r\n\t\t\t\t</agm-info-window>\r\n\r\n\t\t\t</agm-marker>\r\n\r\n\t\t\t<agm-marker \r\n\t\t\t*ngFor=\"let p of pins\"\r\n\t\t\t[latitude]=\"p.lat\" \r\n\t\t\t[longitude]=\"p.lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>{{p.name}}</strong><br>\r\n\t\t\t\t\t<span>{{p.street}}<br>{{p.czs}}<br>{{p.phone}}</span>\r\n\t\t\t\t</agm-info-window>\r\n\t\t\t\t\r\n\t\t\t</agm-marker>\r\n\r\n\t\t</agm-map>\r\n\t</div>\r\n\r\n</div>"
+module.exports = "<div *ngIf=\"user\" class=\"container\">\r\n\r\n\t<div class=\"mt-3 col text-center mx-auto\">\r\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\r\n\t\t<h1 class=\"h4 mb-3 font-weight-normal\">Here are some fly shops and guide services near you.</h1>\t\r\n\t</div>\r\n\r\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\r\n\t\t<agm-map \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\"\r\n\t\t\t[zoom]=\"10\">\r\n\t\t\t\r\n\t\t\t<agm-marker \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>You Are Here</strong>\r\n\t\t\t\t</agm-info-window>\r\n\r\n\t\t\t</agm-marker>\r\n\r\n\t\t\t<agm-marker \r\n\t\t\t*ngFor=\"let p of pins\"\r\n\t\t\t[latitude]=\"p.lat\" \r\n\t\t\t[longitude]=\"p.lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>{{p.name}}</strong><br>\r\n\t\t\t\t\t<span>{{p.street}}<br>{{p.czs}}<br>{{p.phone}}</span>\r\n\t\t\t\t</agm-info-window>\r\n\t\t\t\t\r\n\t\t\t</agm-marker>\r\n\r\n\t\t</agm-map>\r\n\t</div>\r\n\r\n</div>"
 
 /***/ }),
 
