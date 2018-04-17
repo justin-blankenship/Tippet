@@ -30,3 +30,12 @@ export class NavbarComponent implements OnInit {
   }
 
 }
+
+/* Close hamburger menu on selection. */
+$(function() {
+    $('.navbar a').on('click', function(){ 
+        if($('.navbar-toggler').css('display') !='none'){
+            $('.navbar-toggler').trigger( "click" );
+        }
+    });
+});

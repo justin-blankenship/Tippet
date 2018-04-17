@@ -22,8 +22,8 @@
         "styles.css"
       ],
       "scripts": [
-        "nav.js",
-        "../node_modules/jquery/dist/jquery.min.js"
+        "../node_modules/jquery/dist/jquery.min.js",
+        "nav.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
