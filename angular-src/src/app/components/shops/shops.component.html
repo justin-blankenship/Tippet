@@ -21,12 +21,12 @@
 
 			</agm-marker>
 
-			<agm-marker *ngFor="let p of pins; let i = index"
-			(markerClick="showInfoWindow(infoWindow, i))">
+			<agm-marker 
+			*ngFor="let p of pins"
 			[latitude]="p.lat" 
 			[longitude]="p.lng">
 				
-				<agm-info-window #infoWindow>
+				<agm-info-window>
 					<strong>{{p.name}}</strong><br>
 					<span>{{p.street}}<br>{{p.czs}}<br>{{p.phone}}</span>
 				</agm-info-window>

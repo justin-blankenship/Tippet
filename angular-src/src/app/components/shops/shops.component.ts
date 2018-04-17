@@ -400,23 +400,6 @@ export class ShopsComponent implements OnInit {
     }   
   ];
 
-  infoWindowOpened = null;
-
-  filter() {
-    this.infoWindowOpened = null;
-  // redraw the map with filtered markers
-  }
-
-  showInfoWindow(infoWindow, index) {
-    if (this.infoWindowOpened === infoWindow) {
-      return;
-  }
-  if (this.infoWindowOpened !== null) {
-    this.infoWindowOpened.close();
-  }
-  this.infoWindowOpened = infoWindow;   
-}
-
   constructor(
     private authService: AuthService, 
     private router: Router
