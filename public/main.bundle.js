@@ -876,7 +876,7 @@ module.exports = "agm-map {\r\n\theight: 450px;\r\n}\r\n\r\n"
 /***/ "./src/app/components/shops/shops.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"container\">\r\n\r\n\t<div class=\"mt-3 col text-center mx-auto\">\r\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\r\n\t\t<h1 class=\"h4 mb-3 font-weight-normal\">Here are some fly shops and guide services near you.</h1>\t\r\n\t</div>\r\n\r\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\r\n\t\t<agm-map \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\"\r\n\t\t\t[zoom]=\"10\">\r\n\t\t\t\r\n\t\t\t<agm-marker \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>You Are Here</strong>\r\n\t\t\t\t</agm-info-window>\r\n\r\n\t\t\t</agm-marker>\r\n\r\n\t\t\t<agm-marker \r\n\t\t\t*ngFor=\"let p of pins\"\r\n\t\t\t[latitude]=\"p.lat\" \r\n\t\t\t[longitude]=\"p.lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>{{p.name}}</strong><br>\r\n\t\t\t\t\t<span>{{p.street}}<br>{{p.czs}}<br>{{p.phone}}</span>\r\n\t\t\t\t</agm-info-window>\r\n\t\t\t\t\r\n\t\t\t</agm-marker>\r\n\r\n\t\t</agm-map>\r\n\t</div>\r\n\r\n</div>"
+module.exports = "<div *ngIf=\"user\" class=\"container\">\r\n\r\n\t<div class=\"mt-3 col text-center mx-auto\">\r\n\t\t<h2 class=\"page-header\">Hello {{user.name}}.</h2>\r\n\t\t<h1 class=\"h4 mb-3 font-weight-normal\">Here are some fly shops and guide services near you.</h1>\t\r\n\t</div>\r\n\r\n\t<div *ngIf=\"lat && lng\" class=\"mt-3\">\r\n\t\t<agm-map \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\"\r\n\t\t\t[zoom]=\"10\">\r\n\t\t\t\r\n\t\t\t<agm-marker \r\n\t\t\t[latitude]=\"lat\" \r\n\t\t\t[longitude]=\"lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window>\r\n\t\t\t\t\t<strong>You Are Here</strong>\r\n\t\t\t\t</agm-info-window>\r\n\r\n\t\t\t</agm-marker>\r\n\r\n\t\t\t<agm-marker \r\n\t\t\t*ngFor=\"let pin of pins; let i = index\" \r\n\t\t\t(markerClick)=\"showInfoWindow(infoWindow, i)\"\r\n\t\t\t[latitude]=\"pin.lat\" \r\n\t\t\t[longitude]=\"pin.lng\">\r\n\t\t\t\t\r\n\t\t\t\t<agm-info-window #infoWindow>\r\n\t\t\t\t\t<strong>{{pin.name}}</strong><br>\r\n\t\t\t\t\t<span>{{pin.street}}<br>{{pin.czs}}<br>{{pin.phone}}</span>\r\n\t\t\t\t</agm-info-window>\r\n\t\t\t\t\r\n\t\t\t</agm-marker>\r\n\r\n\t\t</agm-map>\r\n\t</div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -904,6 +904,7 @@ var ShopsComponent = /** @class */ (function () {
     function ShopsComponent(authService, router) {
         this.authService = authService;
         this.router = router;
+        this.infoWindowOpened = null;
         this.pins = [
             {
                 name: 'Curtis Wright Outfitters & Fly Fishing Guides',
@@ -1291,6 +1292,18 @@ var ShopsComponent = /** @class */ (function () {
             }
         ];
     }
+    ShopsComponent.prototype.filter = function () {
+        this.infoWindowOpened = null;
+    };
+    ShopsComponent.prototype.showInfoWindow = function (infoWindow, index) {
+        if (this.infoWindowOpened === infoWindow) {
+            return;
+        }
+        if (this.infoWindowOpened !== null) {
+            this.infoWindowOpened.close();
+        }
+        this.infoWindowOpened = infoWindow;
+    };
     ShopsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.authService.getProfile().subscribe(function (profile) {

@@ -13,6 +13,22 @@ export class ShopsComponent implements OnInit {
   lat: number;
   lng: number;
 
+  infoWindowOpened = null;
+
+  filter() {
+    this.infoWindowOpened = null;
+  }
+
+  showInfoWindow(infoWindow, index) {
+    if (this.infoWindowOpened === infoWindow) {
+      return;
+    }
+    if (this.infoWindowOpened !== null) {
+      this.infoWindowOpened.close();
+    }
+    this.infoWindowOpened = infoWindow;
+  }
+
   pins: pin[] = [
     {
       name:'Curtis Wright Outfitters & Fly Fishing Guides',
