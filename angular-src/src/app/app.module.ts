@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path:'videos',
+    path:'flies',
     component: FliesComponent
   },
   { 

@@ -146,7 +146,7 @@ var appRoutes = [
         canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]]
     },
     {
-        path: 'videos',
+        path: 'flies',
         component: __WEBPACK_IMPORTED_MODULE_18__components_flies_flies_component__["a" /* FliesComponent */]
     },
     {
@@ -322,7 +322,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<!-- <div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div> -->"
+module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<!-- <div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div> -->\r\n<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
@@ -332,6 +332,8 @@ module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"l
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FliesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 // import { Component, OnInit } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -358,10 +360,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //   }
 // }
 
+
+
 var FliesComponent = /** @class */ (function () {
-    function FliesComponent() {
+    function FliesComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
     }
     FliesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getProfile().subscribe(function (profile) {
+            _this.user = profile.user;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
     };
     FliesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -369,7 +382,8 @@ var FliesComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/flies/flies.component.html"),
             styles: [__webpack_require__("./src/app/components/flies/flies.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], FliesComponent);
     return FliesComponent;
 }());
