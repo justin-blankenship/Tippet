@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 
-@Component({
-  selector: 'app-flies',
-  templateUrl: './flies.component.html',
-  styleUrls: ['./flies.component.css']
-})
-export class FliesComponent implements OnInit {
+// @Component({
+//   selector: 'app-flies',
+//   templateUrl: './flies.component.html',
+//   styleUrls: ['./flies.component.css']
+// })
+// export class FliesComponent implements OnInit {
 
-  constructor() { }
+//   constructor() { }
 
-  ngOnInit() {
-  }
+//   ngOnInit() {
+//   }
 
-}
+// }
 // import { Component, OnInit } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 
@@ -33,3 +33,32 @@ export class FliesComponent implements OnInit {
 //   }
 // }
 
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-flies',
+  templateUrl: './flies.component.html',
+  styleUrls: ['./flies.component.css']
+})
+
+export class FliesComponent implements OnInit {
+  fly: Object;
+
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+    ) { }
+
+  ngOnInit() {
+    this.authService.getProfile().subscribe(data => {
+      this.fly = data.fly;
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+  }
+
+}
