@@ -1,19 +1,4 @@
 // import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-flies',
-//   templateUrl: './flies.component.html',
-//   styleUrls: ['./flies.component.css']
-// })
-// export class FliesComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
-// import { Component, OnInit } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 
 // @Component({
@@ -32,33 +17,18 @@
 //   	});
 //   }
 // }
-
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flies',
   templateUrl: './flies.component.html',
   styleUrls: ['./flies.component.css']
 })
-
 export class FliesComponent implements OnInit {
-  fly: Object;
 
-  constructor(
-    private authService: AuthService, 
-    private router: Router
-    ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(data => {
-      this.fly = data.fly;
-    },
-    err => {
-      console.log(err);
-      return false;
-    });
   }
 
 }

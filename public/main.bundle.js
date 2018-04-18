@@ -146,7 +146,7 @@ var appRoutes = [
         canActivate: [__WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]]
     },
     {
-        path: 'flies',
+        path: 'videos',
         component: __WEBPACK_IMPORTED_MODULE_18__components_flies_flies_component__["a" /* FliesComponent */]
     },
     {
@@ -322,7 +322,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>"
+module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<!-- <div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div> -->"
 
 /***/ }),
 
@@ -332,9 +332,8 @@ module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"l
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FliesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 // import { Component, OnInit } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -350,18 +349,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //   styleUrls: ['./flies.component.css']
 // })
 // export class FliesComponent implements OnInit {
-//   constructor() { }
-//   ngOnInit() {
-//   }
-// }
-// import { Component, OnInit } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// @Component({
-//   selector: 'app-flies',
-//   templateUrl: './flies.component.html',
-//   styleUrls: ['./flies.component.css']
-// })
-// export class FliesComponent implements OnInit {
 // 	flies: any;
 //   constructor(private http: HttpClient) { }
 //   ngOnInit() {
@@ -371,21 +358,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //   }
 // }
 
-
-
 var FliesComponent = /** @class */ (function () {
-    function FliesComponent(authService, router) {
-        this.authService = authService;
-        this.router = router;
+    function FliesComponent() {
     }
     FliesComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.authService.getProfile().subscribe(function (data) {
-            _this.fly = data.fly;
-        }, function (err) {
-            console.log(err);
-            return false;
-        });
     };
     FliesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -393,8 +369,7 @@ var FliesComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/flies/flies.component.html"),
             styles: [__webpack_require__("./src/app/components/flies/flies.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
+        __metadata("design:paramtypes", [])
     ], FliesComponent);
     return FliesComponent;
 }());
