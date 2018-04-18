@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-flies',
@@ -7,18 +6,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./flies.component.css']
 })
 export class FliesComponent implements OnInit {
-	flies: any;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-  	this.http.get('/flies').subscribe(data => {
-  		this.flies = data;
-  	});
   }
-}
 
+}
 // import { Component, OnInit } from '@angular/core';
+// import { HttpClient } from '@angular/common/http';
 
 // @Component({
 //   selector: 'app-flies',
@@ -26,10 +22,14 @@ export class FliesComponent implements OnInit {
 //   styleUrls: ['./flies.component.css']
 // })
 // export class FliesComponent implements OnInit {
+// 	flies: any;
 
-//   constructor() { }
+//   constructor(private http: HttpClient) { }
 
 //   ngOnInit() {
+//   	this.http.get('/flies').subscribe(data => {
+//   		this.flies = data;
+//   	});
 //   }
-
 // }
+
