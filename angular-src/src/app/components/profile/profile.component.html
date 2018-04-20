@@ -5,3 +5,11 @@
 		<li class="list-group-item">Email: {{user.email}}</li>
 	</ul>
 </div>
+
+
+<div *ngIf="user" class="mt-3 col text-center mx-auto">
+	<h2 class="page-header">Hello {{user.name}}</h2>
+	<ul class="list-group mt-5">
+		<li class="list-group-item">Title: {{fly.username}}</li>
+	</ul>
+</div>
