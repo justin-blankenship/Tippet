@@ -716,7 +716,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.username}}</li>\r\n\t</ul>\r\n</div>"
+module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
