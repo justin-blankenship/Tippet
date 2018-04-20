@@ -716,7 +716,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t</ul>\r\n</div>"
+module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Hello {{user.name}}</h2>\r\n\t<ul class=\"list-group mt-5\">\r\n\t\t<li class=\"list-group-item\">Username: {{user.username}}</li>\r\n\t\t<li class=\"list-group-item\">Email: {{user.email}}</li>\r\n\t</ul>\r\n</div>"
 
 /***/ }),
 
@@ -728,7 +728,6 @@ module.exports = "<div *ngIf=\"user\" class=\"mt-3 col text-center mx-auto\">\r\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -741,18 +740,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(authService, router, http) {
+    function ProfileComponent(authService, router) {
         this.authService = authService;
         this.router = router;
-        this.http = http;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/flies').subscribe(function (data) {
-            _this.fly = data;
-        });
         this.authService.getProfile().subscribe(function (profile) {
             _this.user = profile.user;
         }, function (err) {
@@ -767,8 +761,7 @@ var ProfileComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/components/profile/profile.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], ProfileComponent);
     return ProfileComponent;
 }());

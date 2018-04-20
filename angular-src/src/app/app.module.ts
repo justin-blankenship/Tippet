@@ -24,7 +24,6 @@ import { CastingComponent } from './components/casting/casting.component';
 import { TyingComponent } from './components/tying/tying.component';
 
 
-
 const appRoutes: Routes = [
   {
     path:'', 
