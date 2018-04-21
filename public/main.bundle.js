@@ -37,12 +37,14 @@ module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n\t<f
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fly_service__ = __webpack_require__("./src/app/services/fly.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
@@ -52,7 +54,8 @@ var AppComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
-            styles: [__webpack_require__("./src/app/app.component.css")]
+            styles: [__webpack_require__("./src/app/app.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_fly_service__["a" /* FlyService */]]
         })
     ], AppComponent);
     return AppComponent;
@@ -92,12 +95,16 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_handling_handling_component__ = __webpack_require__("./src/app/components/handling/handling.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_casting_casting_component__ = __webpack_require__("./src/app/components/casting/casting.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_tying_tying_component__ = __webpack_require__("./src/app/components/tying/tying.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_employee_detail_employee_detail_component__ = __webpack_require__("./src/app/components/employee-detail/employee-detail.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_employee_list_employee_list_component__ = __webpack_require__("./src/app/components/employee-list/employee-list.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -168,6 +175,14 @@ var appRoutes = [
     {
         path: 'tying',
         component: __WEBPACK_IMPORTED_MODULE_23__components_tying_tying_component__["a" /* TyingComponent */]
+    },
+    {
+        path: 'detail',
+        component: __WEBPACK_IMPORTED_MODULE_24__components_employee_detail_employee_detail_component__["a" /* EmployeeDetailComponent */]
+    },
+    {
+        path: 'list',
+        component: __WEBPACK_IMPORTED_MODULE_25__components_employee_list_employee_list_component__["a" /* EmployeeListComponent */]
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -188,20 +203,22 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_20__components_about_about_component__["a" /* AboutComponent */],
                 __WEBPACK_IMPORTED_MODULE_21__components_handling_handling_component__["a" /* HandlingComponent */],
                 __WEBPACK_IMPORTED_MODULE_22__components_casting_casting_component__["a" /* CastingComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__components_tying_tying_component__["a" /* TyingComponent */]
+                __WEBPACK_IMPORTED_MODULE_23__components_tying_tying_component__["a" /* TyingComponent */],
+                __WEBPACK_IMPORTED_MODULE_24__components_employee_detail_employee_detail_component__["a" /* EmployeeDetailComponent */],
+                __WEBPACK_IMPORTED_MODULE_25__components_employee_list_employee_list_component__["a" /* EmployeeListComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
-                __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_15__angular_common_http__["a" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_14__angular_http__["HttpModule"],
                 __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
                 __WEBPACK_IMPORTED_MODULE_17__agm_core__["a" /* AgmCoreModule */].forRoot({
                     apiKey: 'AIzaSyA0NXbFJAdU2ZXdu3wTATEORvjUbgFO9OU'
                 })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_15__angular_common_http__["b" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_15__angular_common_http__["a" /* HttpClientModule */], __WEBPACK_IMPORTED_MODULE_4__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_6__guards_auth_guard__["a" /* AuthGuard */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -312,6 +329,105 @@ var CastingComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/employee-detail/employee-detail.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeDetailComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_employee_service__ = __webpack_require__("./src/app/services/employee.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EmployeeDetailComponent = /** @class */ (function () {
+    function EmployeeDetailComponent(_employeeService) {
+        this._employeeService = _employeeService;
+        this.employees = [];
+    }
+    EmployeeDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._employeeService.getEmployees()
+            .subscribe(function (resEmployeeData) { return _this.employees = resEmployeeData; });
+    };
+    EmployeeDetailComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-employee-detail',
+            template: "<h2>Employee Details</h2>\n\t\t\t<ul *ngFor=\"let employee of employees\">\n\t\t\t\t<li>{{employee.id}}. {{employee.name}} - {{employee.gender}}</li>\n\t\t\t</ul>"
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_employee_service__["a" /* EmployeeService */]])
+    ], EmployeeDetailComponent);
+    return EmployeeDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/employee-list/employee-list.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/employee-list/employee-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2>Employee List</h2>\n<ul *ngFor=\"let employee of employees\">\n\t<li>{{employee.name}}</li>\n</ul>"
+
+/***/ }),
+
+/***/ "./src/app/components/employee-list/employee-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_employee_service__ = __webpack_require__("./src/app/services/employee.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EmployeeListComponent = /** @class */ (function () {
+    function EmployeeListComponent(_employeeService) {
+        this._employeeService = _employeeService;
+        this.employees = [];
+    }
+    EmployeeListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._employeeService.getEmployees()
+            .subscribe(function (resEmployeeData) { return _this.employees = resEmployeeData; });
+    };
+    EmployeeListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-employee-list',
+            template: __webpack_require__("./src/app/components/employee-list/employee-list.component.html"),
+            styles: [__webpack_require__("./src/app/components/employee-list/employee-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_employee_service__["a" /* EmployeeService */]])
+    ], EmployeeListComponent);
+    return EmployeeListComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/flies/flies.component.css":
 /***/ (function(module, exports) {
 
@@ -322,7 +438,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.type }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>"
+module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.flyType }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>\r\n\r\n<h2>Fly Details</h2>\r\n<ul *ngFor=\"let fly of flies\">\r\n\t<li>{{fly.id}}. {{fly.name}} - {{fly.gender}}</li>\r\n</ul>"
 
 /***/ }),
 
@@ -332,7 +448,7 @@ module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"l
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FliesComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fly_service__ = __webpack_require__("./src/app/services/fly.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -345,14 +461,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var FliesComponent = /** @class */ (function () {
-    function FliesComponent(http) {
-        this.http = http;
+    function FliesComponent(_flyService) {
+        this._flyService = _flyService;
+        this.flies = [];
     }
     FliesComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.http.get('/flies').subscribe(function (data) {
-            _this.flies = data;
-        });
+        this._flyService.getFlies()
+            .subscribe(function (resFlyData) { return _this.flies = resFlyData; });
     };
     FliesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -360,7 +476,7 @@ var FliesComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/flies/flies.component.html"),
             styles: [__webpack_require__("./src/app/components/flies/flies.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_fly_service__["a" /* FlyService */]])
     ], FliesComponent);
     return FliesComponent;
 }());
@@ -1505,6 +1621,86 @@ var AuthService = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
     ], AuthService);
     return AuthService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/employee.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var EmployeeService = /** @class */ (function () {
+    function EmployeeService(_http) {
+        this._http = _http;
+        this._url = "assets/employeedata.json";
+    }
+    EmployeeService.prototype.getEmployees = function () {
+        return this._http.get(this._url)
+            .map(function (response) { return response.json(); });
+    };
+    EmployeeService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], EmployeeService);
+    return EmployeeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/fly.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FlyService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var FlyService = /** @class */ (function () {
+    function FlyService(_http) {
+        this._http = _http;
+        this._url = "assets/flydata.json";
+    }
+    FlyService.prototype.getFlies = function () {
+        return this._http.get(this._url)
+            .map(function (response) { return response.json(); });
+    };
+    FlyService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]])
+    ], FlyService);
+    return FlyService;
 }());
 
 

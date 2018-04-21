@@ -22,6 +22,8 @@ import { AboutComponent } from './components/about/about.component';
 import { HandlingComponent } from './components/handling/handling.component';
 import { CastingComponent } from './components/casting/casting.component';
 import { TyingComponent } from './components/tying/tying.component';
+import { EmployeeDetailComponent } from './components/employee-detail/employee-detail.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 
 
 const appRoutes: Routes = [
@@ -70,6 +72,14 @@ const appRoutes: Routes = [
   { 
     path:'tying',
     component: TyingComponent
+  },
+  { 
+    path:'detail',
+    component: EmployeeDetailComponent
+  },
+  { 
+    path:'list',
+    component: EmployeeListComponent
   }
 ]
 
@@ -87,7 +97,9 @@ const appRoutes: Routes = [
     AboutComponent,
     HandlingComponent,
     CastingComponent,
-    TyingComponent
+    TyingComponent,
+    EmployeeDetailComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
