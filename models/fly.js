@@ -3,13 +3,17 @@ const config = require('../config/database');
 
 //Fly Schema
 const FlySchema = mongoose.Schema({
-	title: {
+	name: {
 		type: String,
 		required:true
 	},
 	flyType: {
 		type: String,
 		required:true
+	},
+	size: {
+		type: String,
+		required: true
 	}
 });
 
