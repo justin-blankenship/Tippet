@@ -5,21 +5,21 @@
 <br>
 
 
-	<table class="table table-bordered table-inverse table-hover">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Type</th>
-				<th>Size Range</th>
-				<!-- <th>Details</th> -->
-			</tr>
-		</thead>
-		<tbody>
-			<tr *ngFor="let fly of flies">
-				<td>{{ fly.name }}</td>
-				<td>{{ fly.flyType }}</td>
-				<td>{{ fly.size }}</td>
-				<!-- <td>Show</td> -->
-			</tr>
-		</tbody>
-	</table>
+<table class="table table-inverse">
+	<thead class="thead-light">
+		<tr>
+			<th class="bg-warning text-dark">Name</th>
+			<th class="bg-warning text-dark">Type</th>
+			<th class="bg-warning text-dark">Size Range</th>
+			<!-- <th>Details</th> -->
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let fly of flies">
+			<td class="bg-dark text-warning">{{ fly.name }}</td>
+			<td class="bg-dark text-warning">{{ fly.flyType }}</td>
+			<td class="bg-dark text-warning">{{ fly.size }}</td>
+			<!-- <td>Show</td> -->
+		</tr>
+	</tbody>
+</table>
