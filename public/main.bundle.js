@@ -438,7 +438,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Fly Database</h2>\r\n</div>\r\n\r\n<div class=\"container\">\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Name</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t\t<th>Size Range</th>\r\n\t\t\t\t<th>Details</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.name }}</td>\r\n\t\t\t\t<td>{{ fly.flyType }}</td>\r\n\t\t\t\t<td>{{ fly.size }}</td>\r\n\t\t\t\t<td>Show</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>"
+module.exports = "<div class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Fly Database</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n\r\n\t<table class=\"table table-bordered table-inverse table-hover\">\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Name</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t\t<th>Size Range</th>\r\n\t\t\t\t<!-- <th>Details</th> -->\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.name }}</td>\r\n\t\t\t\t<td>{{ fly.flyType }}</td>\r\n\t\t\t\t<td>{{ fly.size }}</td>\r\n\t\t\t\t<!-- <td>Show</td> -->\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n"
 
 /***/ }),
 
