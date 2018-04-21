@@ -438,7 +438,7 @@ module.exports = ""
 /***/ "./src/app/components/flies/flies.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div>\r\n\t<ul class=\"list-group\">\r\n\t\t<li class=\"list-group-item\">Title: {{fly.title}}</li>\r\n\t\t<li class=\"list-group-item\">Type: {{fly.type}}</li>\r\n\t</ul>\r\n</div> -->\r\n\r\n<div class=\"container\">\r\n\t<h1>Fly List</h1>\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Title</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.title }}</td>\r\n\t\t\t\t<td>{{ fly.flyType }}</td>\r\n\t\t\t\t<td>Show Detail</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>\r\n\r\n<h2>Fly Details</h2>\r\n<ul *ngFor=\"let fly of flies\">\r\n\t<li>{{fly.id}}. {{fly.name}} - {{fly.gender}}</li>\r\n</ul>"
+module.exports = "<div class=\"mt-3 col text-center mx-auto\">\r\n\t<h2 class=\"page-header\">Fly Database</h2>\r\n</div>\r\n\r\n<div class=\"container\">\r\n\t<table>\r\n\t\t<thead>\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Name</th>\r\n\t\t\t\t<th>Type</th>\r\n\t\t\t\t<th>Size Range</th>\r\n\t\t\t\t<th>Details</th>\r\n\t\t\t</tr>\r\n\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let fly of flies\">\r\n\t\t\t\t<td>{{ fly.name }}</td>\r\n\t\t\t\t<td>{{ fly.flyType }}</td>\r\n\t\t\t\t<td>{{ fly.size }}</td>\r\n\t\t\t\t<td>Show</td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t</table>\r\n</div>"
 
 /***/ }),
 
@@ -1690,7 +1690,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FlyService = /** @class */ (function () {
     function FlyService(_http) {
         this._http = _http;
-        this._url = "mongodb://justin:justin@ds113749.mlab.com:13749/tippet";
+        this._url = "assets/flydata.json";
     }
     FlyService.prototype.getFlies = function () {
         return this._http.get(this._url)

@@ -1,7 +1,7 @@
 [
-	{"id": 1, "name": "Andrew", "gender": "Male"},
-	{"id": 2, "name": "Brandon", "gender": "Male"},
-	{"id": 3, "name": "Christina", "gender": "Female"},
-	{"id": 4, "name": "Elena", "gender": "Female"},
-	{"id": 5, "name": "Felicia", "gender": "Female"}
+	{"id": 1, "name": "Adams", "flyType": "Dry", "size":"10 to 20"},
+	{"id": 2, "name": "Bivisible", "flyType": "Dry", "size":"10 to 16"},
+	{"id": 3, "name": "Black Gnat", "flyType": "Dry", "size":"10 to 18"},
+	{"id": 4, "name": "Blue Wing Olive", "flyType": "Dry", "size":"14 to 22"},
+	{"id": 5, "name": "Callibaetis", "flyType": "Dry", "size":"12 to 16"}
 ]
