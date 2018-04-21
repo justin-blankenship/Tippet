@@ -1690,7 +1690,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FlyService = /** @class */ (function () {
     function FlyService(_http) {
         this._http = _http;
-        this._url = "assets/flydata.json";
+        this._url = "mongodb://justin:justin@ds113749.mlab.com:13749/tippet";
     }
     FlyService.prototype.getFlies = function () {
         return this._http.get(this._url)
