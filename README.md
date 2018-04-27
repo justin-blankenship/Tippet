@@ -20,5 +20,5 @@
 - [Bootstrap 4](https://getbootstrap.com)
 - [Jquery](https://jquery.com)
 ## Screenshots
-(./angular-src/src/assets/shot1.png)
-(./angular-src/src/assets/shot2.png)
+[](angular-src/src/assets/shot1.png)
+[](angular-src/src/assets/shot2.png)
