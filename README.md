@@ -20,5 +20,5 @@
 - [Bootstrap 4](https://getbootstrap.com)
 - [Jquery](https://jquery.com)
 ## Screenshots
-![Login Screen](https://github.com/justin-blankenship/Tippet/blob/master/angular-src/src/assets/shot1.png)
+![Login Screen](https://github.com/justin-blankenship/Tippet/blob/master/angular-src/src/assets/shot1.PNG?raw=true)
 ![Home Screen](https://github.com/justin-blankenship/Tippet/blob/master/angular-src/src/assets/shot2.png)
