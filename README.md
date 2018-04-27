@@ -20,5 +20,5 @@
 - [Bootstrap 4](https://getbootstrap.com)
 - [Jquery](https://jquery.com)
 ## Screenshots
-<img src="../angular-src/src/assets/shot1.png" alt="Home Screen"/>
-<img src="../angular-src/src/assets/shot2.png" alt="Login Screen"/>
+<img src="/../angular-src/src/assets/shot1.png" alt="Home Screen"/>
+<img src="/../angular-src/src/assets/shot2.png" alt="Login Screen"/>
