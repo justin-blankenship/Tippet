@@ -1,8 +1,8 @@
 # Tippet Fly Fishing Application
-## Developer(s)
+## Developer
 ##### [Justin Blankenship](https://github.com/justin-blankenship)
 ## Outdoor Recreation Meets Technology
-###### A mobile-friendly application where fly anglers can view tutorials on casting, knot tying, entomology, etc.  Other tools are built in to assist anglers, such as the fly pattern database and the shop-finder feature.  The primary intent is to help fly anglers save time and money.  The application is solely for personal use at this time, but should those goals change, future scaling and distribution can be easily implemented.
+###### A mobile-friendly web application where fly anglers can view tutorials on casting, knot tying, entomology, and more.  Other tools focus on assisting fly anglers, such as the fly pattern database and the shop-finder feature.  The primary intent is to help fly anglers save time and money.  The application is solely for personal use at this time, but should those goals change, future scaling and distribution can be easily implemented.
 ## Platform
 ##### This is a MEAN Stack application built using:
 - [MongoDB](https://www.mongodb.com)
@@ -20,5 +20,5 @@
 - [Bootstrap 4](https://getbootstrap.com)
 - [Jquery](https://jquery.com)
 ## Screenshots
-(../angular-src/src/assets/shot1.png)
-(../angular-src/src/assets/shot2.png)
+(./angular-src/src/assets/shot1.png)
+(./angular-src/src/assets/shot2.png)
