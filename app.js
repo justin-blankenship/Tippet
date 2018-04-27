@@ -1,4 +1,3 @@
-//main server entry point file
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -23,29 +22,23 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 
 const users = require('./routes/users');
-//const flies = require('./routes/flies');
 
-//Port Number
+//Heroku Port Linkage
 const port = process.env.PORT || 8080;
 
-//CORS Middleware - allows access to any domain unless authentication disables routes
-app.use(cors());  
+//Allows access to any domain unless authentication disables routes
+app.use(cors());
 
-//Set the static directory for forntend framework
+//Set static directory for frontend framework  
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Body Parser Middleware
-//app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-//Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 require('./config/passport')(passport);
 
 app.use('/users', users);
-//app.use('/flies', flies);
 
 //Index Route
 app.get('/', (req, res) => {

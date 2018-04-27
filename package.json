@@ -8,13 +8,13 @@
     "start": "node app"
   },
   "dependencies": {
-    "@agm/core": "^1.0.0-beta.2",
     "@types/jquery": "^3.3.1",
+    "@agm/core": "^1.0.0-beta.2",
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
     "express": "*",
-    "jquery": "^3.3.1",
+    "jquery": "^3.3.1",    
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
